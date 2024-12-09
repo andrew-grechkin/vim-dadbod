@@ -28,7 +28,11 @@ function! db#adapter#sqlite#command(url) abort
 endfunction
 
 function! db#adapter#sqlite#interactive(url) abort
-  return db#adapter#sqlite#command(a:url) + ['-column', '-header']
+  return db#adapter#sqlite#command(a:url) + ['-tabs', '-header']
+endfunction
+
+function! db#adapter#sqlite#filter(url) abort
+  return db#adapter#sqlite#command(a:url) + ['-tabs', '-header']
 endfunction
 
 function! db#adapter#sqlite#tables(url) abort
